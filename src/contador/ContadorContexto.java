@@ -26,7 +26,8 @@ public class ContadorContexto extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		getServletContext().setAttribute("contador", ((int)getServletContext().getAttribute("contador")+1));
+		response.sendRedirect(response.encodeRedirectUrl(request.getContextPath()));;
 	}
 
 	/**

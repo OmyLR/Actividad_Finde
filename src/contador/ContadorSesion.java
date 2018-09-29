@@ -25,7 +25,9 @@ public class ContadorSesion extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getSession().setAttribute("contador", ((int)request.getSession().getAttribute("contador")+1)); 
+		//getServletContext().getRequestDispatcher("/").forward(request, response);
+		response.sendRedirect(response.encodeRedirectURL(request.getContextPath()));
 	}
 
 	/**

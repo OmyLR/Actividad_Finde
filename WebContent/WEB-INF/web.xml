@@ -17,6 +17,10 @@
     <servlet-name>ContarContexto</servlet-name>
     <servlet-class>contador.ContadorContexto</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Formulario</servlet-name>
+  	<servlet-class>formulario.Formulario</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>ContarSesion</servlet-name>
     <url-pattern>/servlets/contador1</url-pattern>
@@ -24,6 +28,10 @@
   <servlet-mapping>
     <servlet-name>ContarContexto</servlet-name>
     <url-pattern>/servlets/contador2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Formulario</servlet-name>
+  	<url-pattern>/</url-pattern>
   </servlet-mapping>
  
 
