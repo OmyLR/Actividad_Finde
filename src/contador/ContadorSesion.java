@@ -31,7 +31,7 @@ public class ContadorSesion extends HttpServlet {
 		Numero contadorSession = (Numero) request.getSession().getAttribute("contador");
 		contadorSession.Sumar();
 		//getServletContext().getRequestDispatcher("/").forward(request, response);
-		response.sendRedirect(response.encodeRedirectURL(request.getContextPath()));
+		response.sendRedirect(request.getContextPath());
 	}
 
 	/**

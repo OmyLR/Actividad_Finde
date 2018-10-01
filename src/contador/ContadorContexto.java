@@ -31,7 +31,7 @@ public class ContadorContexto extends HttpServlet {
 		//getServletContext().setAttribute("contador", ((int)getServletContext().getAttribute("contador")+1));
 		Numero contador = (Numero) getServletContext().getAttribute("contador");
 		contador.Sumar();
-		response.sendRedirect(response.encodeRedirectUrl(request.getContextPath()));;
+		response.sendRedirect(request.getContextPath());;
 	}
 
 	/**
