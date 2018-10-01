@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import modelo.Numero;
+
 /**
  * Servlet implementation class ContadorContexto
  */
@@ -26,7 +28,9 @@ public class ContadorContexto extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		getServletContext().setAttribute("contador", ((int)getServletContext().getAttribute("contador")+1));
+		//getServletContext().setAttribute("contador", ((int)getServletContext().getAttribute("contador")+1));
+		Numero contador = (Numero) getServletContext().getAttribute("contador");
+		contador.Sumar();
 		response.sendRedirect(response.encodeRedirectUrl(request.getContextPath()));;
 	}
 

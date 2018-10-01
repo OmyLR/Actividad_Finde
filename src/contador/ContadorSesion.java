@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import modelo.Numero;
+
 /**
  * Servlet implementation class Contador
  */
@@ -25,7 +27,9 @@ public class ContadorSesion extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getSession().setAttribute("contador", ((int)request.getSession().getAttribute("contador")+1)); 
+		//request.getSession().setAttribute("contador", ((int)request.getSession().getAttribute("contador")+1)); 
+		Numero contadorSession = (Numero) request.getSession().getAttribute("contador");
+		contadorSession.Sumar();
 		//getServletContext().getRequestDispatcher("/").forward(request, response);
 		response.sendRedirect(response.encodeRedirectURL(request.getContextPath()));
 	}

@@ -8,10 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import modelo.Numero;
+
 /**
  * Servlet implementation class formulario
  */
-@WebServlet("/formulario")
 public class Formulario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,18 +31,20 @@ public class Formulario extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession sesion = request.getSession();
 		if(sesion.getAttribute("contador") == null) {
-			sesion.setAttribute("contador", 0);
+			Numero sesN = new Numero();
+			sesion.setAttribute("contador", sesN);
 		}
 		if(getServletContext().getAttribute("contador") == null) {
-			getServletContext().setAttribute("contador", 0);
+			Numero contexto = new Numero();
+			getServletContext().setAttribute("contador", contexto);
 		}
-		int contadorSesion = (int) sesion.getAttribute("contador");
-		int contadorContexto = (int) getServletContext().getAttribute("contador");
+		Numero contadorSesion = (Numero) sesion.getAttribute("contador");
+		Numero contadorContexto = (Numero) getServletContext().getAttribute("contador");
 		String formulario = "<!DOCTYPE html>"
 				+ "<html>"
 					+ "<head>"
 						+ "<meta charset='EUC-KR'>"
-						+ "<title>Insert title here</title>"
+						+ "<title>Concepto de Sesion y Contexto</title>"
 					+ "</head>"
 					+ "<body>"
 						+ "	<form method='POST' action='servlets/contador1'>"
