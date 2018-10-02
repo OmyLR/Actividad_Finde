@@ -18,8 +18,16 @@
     <servlet-class>contador.ContadorContexto</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>Formulario</servlet-name>
-  	<servlet-class>formulario.Formulario</servlet-class>
+    <servlet-name>Formulario</servlet-name>
+    <servlet-class>formulario.Formulario</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Flujo</servlet-name>
+  	<servlet-class>controlador.Flujo</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>JSPFile</servlet-name>
+  	<jsp-file>/jsp/holamundo.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
     <servlet-name>ContarSesion</servlet-name>
@@ -30,9 +38,15 @@
     <url-pattern>/servlets/contador2</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>Formulario</servlet-name>
-  	<url-pattern>/</url-pattern>
+    <servlet-name>Formulario</servlet-name>
+    <url-pattern>/Formulario</url-pattern>
   </servlet-mapping>
- 
-
+  <servlet-mapping>
+  	<servlet-name>Flujo</servlet-name>
+  	<url-pattern>/Flujo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>JSPFile</servlet-name>
+  	<url-pattern>/jsp</url-pattern>
+  </servlet-mapping>
 </web-app>

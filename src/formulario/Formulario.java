@@ -57,6 +57,7 @@ public class Formulario extends HttpServlet {
 							+ "<input type='number' name='contContext' value="+contadorContexto+">"
 							+ "<input type='submit' name='btnContext' value='Incrementar Contador' >"
 						+"</form>"
+							
 					+ "</body>"
 				+ "</html>";
 		response.getWriter().append(formulario);
